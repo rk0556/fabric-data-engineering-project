@@ -1,0 +1,40 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "d5acf09f-6e1a-8370-489f-57e77aa9cce8",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "source_file": {
+              "value": {
+                "value": "@pipeline().parameters.source_file",
+                "type": "Expression"
+              },
+              "type": "string"
+            }
+          }
+        },
+        "externalReferences": {
+          "connection": "d078c59d-70d0-4d9a-b06e-33555501c7c0"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "NB_Ingest_Orders",
+        "dependsOn": []
+      }
+    ],
+    "parameters": {
+      "source_file": {
+        "type": "string",
+        "defaultValue": "retail_data.csv"
+      }
+    }
+  }
+}
